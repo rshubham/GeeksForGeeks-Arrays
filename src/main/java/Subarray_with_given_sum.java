@@ -17,6 +17,10 @@ public class Subarray_with_given_sum {
             }
             if(prefixSum == S) break;
         }
+        if(prefixSum != S) {
+            System.out.println(-1);
+            return;
+        }
         for(int x = startIndex; x <= endIndex; x++){
             System.out.print(arr[x]+" ");
         }

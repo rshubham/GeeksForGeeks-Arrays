@@ -7,6 +7,7 @@ public class Subarray_with_given_sum {
 
     static void findSubArray(int[] arr, int S){
         int prefixSum = 0, startIndex = 0, endIndex = 0;
+
         for(int i =0; i < arr.length; i++){
             prefixSum += arr[i];
             endIndex = i;
@@ -15,16 +16,17 @@ public class Subarray_with_given_sum {
                 startIndex++;
 
             }
-            if(prefixSum == S) break;
+            if(prefixSum == S) {
+                for(int x = startIndex; x <= endIndex; x++){
+                    System.out.print(arr[x]+" ");
+                }
+                System.out.println();
+            }
         }
         if(prefixSum != S) {
             System.out.println(-1);
             return;
         }
-        for(int x = startIndex; x <= endIndex; x++){
-            System.out.print(arr[x]+" ");
-        }
-        System.out.println();
     }
 
     public static void main(String[] args) throws IOException {
